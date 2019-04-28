@@ -1,14 +1,188 @@
 
+@minWidthDesktop: 1440px;
+@maxWidthDesktop: 1440px;
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@font-face {
+  font-family: 'Source Serif Roman' ;
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/SourceSerifPro-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Roman' ;
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/SourceSerifPro-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Roman' ;
+  font-weight: normal;
+  font-style: italic;
+  src: url('../fonts/SourceSerifPro-It.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Roman' ;
+  font-weight: bold;
+  font-style: italic;
+  src: url('../fonts/SourceSerifPro-BoldIt.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* header */
 
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #f8f8f8;
 
+  @media only screen and (min-width : @minWidthDesktop) {
+    background: #f8f8f8 url("../images/desktop/header.png") no-repeat top right;
+    //**********
+    min-width: @minWidthDesktop;
+    max-width: @maxWidthDesktop;
+    height: 780px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    width: 100%;
+  } // header__top
+
   &__logo {
-    position: absolute;
+    float: left;
+  } // header__logo
+
+  &__menu-toggle {
+    @media only screen and (min-width : @minWidthDesktop) {
+      display: none;
+    }
+  } // header__menu-toggle
+
+  &__menu {
+    @media only screen and (min-width : @minWidthDesktop) {
+      float: left;
+      padding: 32px 0 18px 82px;
+    }
+  } // header__menu
+
+  &__phone {
+    color: #878787;
+    font-family: "Source Serif Roman", "Times New Roman", serif;
+    font-size: 18px;
+    font-style: normal;
+    float: right;
+    margin-right: 398px;
+    margin-top: 31px;
+  } // header__phone
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } // header__bottom
+
+  &__paginator {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 81px;
   }
 
-  &__menu-toggler {
-  }
+  &__center {
+    height: 704px;
+    display: flex;
+    flex-direction: column;
+  } // header__center
+}
 
+/* logo */
+
+.logo {
+  @media only screen and (min-width : @minWidthDesktop) {
+    width: 254px;
+    height: 76px;
+    background: #709c54 url("../images/desktop/logo.png") no-repeat 0 0;
+  }
+}
+
+/* menu */
+
+.menu {
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      @media only screen and (min-width : @minWidthDesktop) {
+        display: inline-block;
+      }
+    } // menu__items > li
+
+    & > li:first-child {
+      @media only screen and (min-width : @minWidthDesktop) {
+        display: none;
+      }
+    } //menu__items > li:first-of-child
+
+  } // menu__items
+
+  &__item {
+    font-family: "Source Serif Roman", "Times New Roman", serif;
+    color: #212021;
+    text-decoration: none;
+    @media only screen and (min-width : @minWidthDesktop) {
+      margin-right: 84px;
+      opacity: 0.6;
+      font-size: 18px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    } //menu__item:hover
+
+  } // menu__item
+
+  &__menu-toggle {
+    @media only screen and (min-width : @minWidthDesktop) {
+      display: none;
+    }
+  }
+}  // menu
+
+/* paginator */
+
+.paginator {
+  counter-reset: paginatorCounter;
+  list-style: none;
+
+  &__item {
+    counter-increment: paginatorCounter;
+    margin: 0 21px;
+    height: 40px;
+    line-height: 40px;
+
+    &::after {
+      content: "";
+      display: inline;
+      border-bottom: 2px solid silver;
+      padding: 5px 5px;
+      font-style: italic;
+      font-size: 14px;
+      font-family: Lato, Verdana, Arial, sans-serif;
+      color: #212021;
+    }
+
+    &_current::after {
+      content: "0"counter(paginatorCounter);
+      border-bottom: 2px solid black;
+      padding: 5px 10px;
+    }
+  } // paginator__item
 }
