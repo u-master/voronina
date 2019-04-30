@@ -1,6 +1,8 @@
 
 @minWidthDesktop: 1440px;
-@maxWidthDesktop: 1440px;
+@maxWidthDesktop: 1920px;
+@minWidthTablet: 764px;
+@maxWidthTablet: 1439px;
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
@@ -41,6 +43,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: #f8f8f8;
+  //**********
+  margin: 0 auto;
 
   @media only screen and (min-width : @minWidthDesktop) {
     background: #f8f8f8 url("../images/desktop/header.png") no-repeat top right;
@@ -48,7 +52,14 @@ body {
     min-width: @minWidthDesktop;
     max-width: @maxWidthDesktop;
     height: 780px;
-    margin: 0 auto;
+  }
+
+  @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+    background: #f8f8f8 url("../images/tablet/header.png") no-repeat top right;
+    //**********
+    min-width: @minWidthTablet;
+    max-width: @maxWidthTablet;
+    height: 822px;
   }
 
   &__top {
@@ -63,12 +74,24 @@ body {
     @media only screen and (min-width : @minWidthDesktop) {
       display: none;
     }
+
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      float: left;
+      margin: 23px 0 21px 115px;
+    }
   } // header__menu-toggle
 
   &__menu {
     @media only screen and (min-width : @minWidthDesktop) {
       float: left;
       padding: 32px 0 18px 82px;
+    }
+
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      position: absolute;
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
     }
   } // header__menu
 
@@ -78,8 +101,14 @@ body {
     font-size: 18px;
     font-style: normal;
     float: right;
-    margin-right: 398px;
-    margin-top: 31px;
+    @media only screen and (min-width : @minWidthDesktop) {
+      margin-top: 31px;
+      margin-right: 398px;
+    }
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      margin-top: 16px;
+      margin-right: 126px;
+    }
   } // header__phone
 
   &__middle {
@@ -92,59 +121,99 @@ body {
     padding: 0;
     margin: 0;
     padding-bottom: 27px;
+
+    @media only screen and (max-device-width : @maxWidthTablet) {
+      display: none;
+    }
   } // header__paginator
 
   &__center {
-    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    height: 650px;
     width: 428px;
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      margin-left: 62px;
+      margin-top: 86px;
+      height: 500px;
+      width: 300px;
+    }
   } // header__center
 
   &__photo {
     margin-right: 432px;
     margin-top: 50px;
+    width: 348px;
+    height: 533px;
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      margin-right: 51px;
+      margin-top: 55px;
+      width: 327px;
+      height: 499px;
+    }
   } // header__photo
 
   &__title {
     color: #212021;
     font-family: "Source Serif Roman", "Times New Roman", serif;
     font-size: 48px;
-    font-weight: normal;
+    //font-weight: normal;
     margin-bottom: 5px;
     z-index: 100;
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      font-size: 36px;
+      margin-bottom: 13px;
+    }
   } // header__title
 
   &__back-title {
     position: relative;
 
     &::before {
-      @media only screen and (min-width : @minWidthDesktop) {
+      @media only screen and (min-device-width : @minWidthTablet) {
         content: attr(data-top-title);
         display: block;
         position: absolute;
         color: #fffeff;
         font-family: "Source Serif Roman", "Times New Roman", serif;
+        z-index: 1;
+      }
+
+      @media only screen and (min-width : @minWidthDesktop) {
         font-size: 83px;
         top: -114px;
         left: -31px;
-        z-index: 1;
+      }
+
+      @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+        font-size: 48px;
+        top: -82px;
+        left: -40px;
       }
     } // header__back-title::before
 
     &::after {
-      @media only screen and (min-width : @minWidthDesktop) {
+      @media only screen and (min-device-width : @minWidthTablet) {
         content: attr(data-bottom-title);
         display: block;
         position: absolute;
         color: #fffeff;
         font-family: "Source Serif Roman", "Times New Roman", serif;
+        z-index: 1;
+      }
+
+      @media only screen and (min-width : @minWidthDesktop) {
         font-size: 50px;
         bottom: -21px;
         left: 184px;
-        z-index: 1;
+      }
+
+      @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+        font-size: 46px;
+        bottom: -13px;
+        left: 58px;
       }
     } // header__back-title::after
   } // header__back-title
@@ -157,6 +226,11 @@ body {
     margin-bottom: 30px;
     line-height: 1.23em;
     z-index: 100;
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      font-size: 16px;
+      width: 274px;
+      margin-bottom: 34px;
+    }
   } // header__desc
 
   &__button {
@@ -167,6 +241,9 @@ body {
     list-style-type: none;
     margin: 0 0 37px 153px;
     padding: 0;
+    @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+      margin: 0 0 74px 61px;
+    }
 
     & > li {
       display: inline-block;
@@ -175,12 +252,18 @@ body {
       font-size: 15px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+      @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+        font-size: 13px;
+      }
     }
 
     & > li:not(:last-child)::after {
       content: "—";
       display: inline;
       margin: 0 4px;
+      @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+        margin: 0 2px;
+      }
     }
 
     &-item {
@@ -197,6 +280,11 @@ body {
     width: 254px;
     height: 76px;
     background: #709c54 url("../images/desktop/logo.png") no-repeat 0 0;
+  }
+  @media only screen and (min-device-width : @minWidthTablet) and (max-device-width : @maxWidthTablet) {
+    width: 201px;
+    height: 60px;
+    background: #709c54 url("../images/tablet/logo.png") no-repeat 0 0;
   }
 } // logo
 
@@ -256,8 +344,26 @@ body {
     @media only screen and (min-width : @minWidthDesktop) {
       display: none;
     }
-  }
+  } // menu__menu-toggle
 }  // menu
+
+.menu-toggle {
+  border-top: 2px solid black;
+  width: 25px;
+  height: 12px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 15px;
+    height: 4px;
+  }
+} // menu-toggle
 
 /* paginator */
 

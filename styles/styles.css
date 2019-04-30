@@ -38,14 +38,22 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: #f8f8f8;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 1440px) {
   .header {
     background: #f8f8f8 url("../images/desktop/header.png") no-repeat top right;
     min-width: 1440px;
-    max-width: 1440px;
+    max-width: 1920px;
     height: 780px;
-    margin: 0 auto;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header {
+    background: #f8f8f8 url("../images/tablet/header.png") no-repeat top right;
+    min-width: 764px;
+    max-width: 1439px;
+    height: 822px;
   }
 }
 .header__top {
@@ -59,10 +67,24 @@ body {
     display: none;
   }
 }
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__menu-toggle {
+    float: left;
+    margin: 23px 0 21px 115px;
+  }
+}
 @media only screen and (min-width: 1440px) {
   .header__menu {
     float: left;
     padding: 32px 0 18px 82px;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__menu {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
   }
 }
 .header__phone {
@@ -71,8 +93,18 @@ body {
   font-size: 18px;
   font-style: normal;
   float: right;
-  margin-right: 398px;
-  margin-top: 31px;
+}
+@media only screen and (min-width: 1440px) {
+  .header__phone {
+    margin-top: 31px;
+    margin-right: 398px;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__phone {
+    margin-top: 16px;
+    margin-right: 126px;
+  }
 }
 .header__middle {
   display: flex;
@@ -84,53 +116,103 @@ body {
   margin: 0;
   padding-bottom: 27px;
 }
+@media only screen and (max-device-width: 1439px) {
+  .header__paginator {
+    display: none;
+  }
+}
 .header__center {
-  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: 650px;
   width: 428px;
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__center {
+    margin-left: 62px;
+    margin-top: 86px;
+    height: 500px;
+    width: 300px;
+  }
 }
 .header__photo {
   margin-right: 432px;
   margin-top: 50px;
+  width: 348px;
+  height: 533px;
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__photo {
+    margin-right: 51px;
+    margin-top: 55px;
+    width: 327px;
+    height: 499px;
+  }
 }
 .header__title {
   color: #212021;
   font-family: "Source Serif Roman", "Times New Roman", serif;
   font-size: 48px;
-  font-weight: normal;
   margin-bottom: 5px;
   z-index: 100;
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__title {
+    font-size: 36px;
+    margin-bottom: 13px;
+  }
 }
 .header__back-title {
   position: relative;
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-device-width: 764px) {
   .header__back-title::before {
     content: attr(data-top-title);
     display: block;
     position: absolute;
     color: #fffeff;
     font-family: "Source Serif Roman", "Times New Roman", serif;
-    font-size: 83px;
-    top: -114px;
-    left: -31px;
     z-index: 1;
   }
 }
 @media only screen and (min-width: 1440px) {
+  .header__back-title::before {
+    font-size: 83px;
+    top: -114px;
+    left: -31px;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__back-title::before {
+    font-size: 48px;
+    top: -82px;
+    left: -40px;
+  }
+}
+@media only screen and (min-device-width: 764px) {
   .header__back-title::after {
     content: attr(data-bottom-title);
     display: block;
     position: absolute;
     color: #fffeff;
     font-family: "Source Serif Roman", "Times New Roman", serif;
+    z-index: 1;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .header__back-title::after {
     font-size: 50px;
     bottom: -21px;
     left: 184px;
-    z-index: 1;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__back-title::after {
+    font-size: 46px;
+    bottom: -13px;
+    left: 58px;
   }
 }
 .header__desc {
@@ -142,6 +224,13 @@ body {
   line-height: 1.23em;
   z-index: 100;
 }
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__desc {
+    font-size: 16px;
+    width: 274px;
+    margin-bottom: 34px;
+  }
+}
 .header__button {
   margin-bottom: 56px;
 }
@@ -149,6 +238,11 @@ body {
   list-style-type: none;
   margin: 0 0 37px 153px;
   padding: 0;
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__social {
+    margin: 0 0 74px 61px;
+  }
 }
 .header__social > li {
   display: inline-block;
@@ -158,10 +252,20 @@ body {
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__social > li {
+    font-size: 13px;
+  }
+}
 .header__social > li:not(:last-child)::after {
   content: "—";
   display: inline;
   margin: 0 4px;
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .header__social > li:not(:last-child)::after {
+    margin: 0 2px;
+  }
 }
 .header__social-item {
   text-decoration: none;
@@ -173,6 +277,13 @@ body {
     width: 254px;
     height: 76px;
     background: #709c54 url("../images/desktop/logo.png") no-repeat 0 0;
+  }
+}
+@media only screen and (min-device-width: 764px) and (max-device-width: 1439px) {
+  .logo {
+    width: 201px;
+    height: 60px;
+    background: #709c54 url("../images/tablet/logo.png") no-repeat 0 0;
   }
 }
 /* menu */
@@ -223,6 +334,22 @@ body {
   .menu__menu-toggle {
     display: none;
   }
+}
+.menu-toggle {
+  border-top: 2px solid black;
+  width: 25px;
+  height: 12px;
+  position: relative;
+}
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 15px;
+  height: 4px;
 }
 /* paginator */
 .paginator {
