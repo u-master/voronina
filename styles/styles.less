@@ -47,6 +47,19 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 76.6%;
+    left: 11.6%;
+    top: 0;
+    z-index: -1;
+    border-left: 2px solid #f8f8f8;
+    border-right: 2px solid #f8f8f8;
+  }
 }
 
 /* logo */
@@ -92,7 +105,7 @@ body {
       left: 106px;
       width: 46px;
       height: 309px;
-      background: url("../images/tablet/two-s-leaf.png") no-repeat 0 50%, url("../images/tablet/vline.png") repeat-y 50% 0;
+      background: url("../images/two-s-leaf.png") no-repeat 0 50%, url("../images/vline.png") repeat-y 50% 0;
     }
   }
 
@@ -104,7 +117,7 @@ body {
       right: 197px;
       width: 28px;
       height: 169px;
-      background: url("../images/tablet/one-s-leaf.png") no-repeat 0 50%, url("../images/tablet/vline.png") repeat-y 50% 0;
+      background: url("../images/one-s-leaf.png") no-repeat 0 50%, url("../images/vline.png") repeat-y 50% 0;
     }
   }
 
@@ -393,6 +406,47 @@ body {
   } // button:active
 } // button
 
+/* social */
+
+.social {
+  list-style-type: none;
+
+  & > li {
+    display: inline-block;
+    opacity: 0.4;
+    font-family: "Source Serif Roman", "Times New Roman", serif;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+      font-size: 13px;
+    }
+  }
+
+  & > li:not(:last-child)::after {
+    content: "—";
+    display: inline;
+    margin: 0 4px;
+    @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+      margin: 0 2px;
+    }
+  }
+
+  &__social-item {
+    text-decoration: none;
+    color: #212021;
+
+    &:hover {
+      color: black;
+      text-decoration: underline;
+    } //header__social-item:hover
+
+    &:active {
+      opacity: 0.6;
+    }
+  } // social__social-item
+} // social
+
 /* header */
 
 .header {
@@ -656,7 +710,6 @@ body {
   } // header__button
 
   &__social {
-    list-style-type: none;
     margin: 0 0 37px 153px;
     padding: 0;
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
@@ -665,40 +718,5 @@ body {
     @media only screen and (max-width : @maxWidthMobile) {
       display: none;
     }
-
-    & > li {
-      display: inline-block;
-      opacity: 0.4;
-      font-family: "Source Serif Roman", "Times New Roman", serif;
-      font-size: 15px;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
-        font-size: 13px;
-      }
-    }
-
-    & > li:not(:last-child)::after {
-      content: "—";
-      display: inline;
-      margin: 0 4px;
-      @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
-        margin: 0 2px;
-      }
-    }
-
-    &-item {
-      text-decoration: none;
-      color: #212021;
-
-      &:hover {
-        color: black;
-        text-decoration: underline;
-      } //header__social-item:hover
-
-      &:active {
-        opacity: 0.6;
-      }
-    } //header__social-item
   } // header__social
 } // header
