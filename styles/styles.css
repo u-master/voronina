@@ -329,6 +329,9 @@ body::before {
   border-bottom: 2px solid black;
   padding: 5px 10px;
 }
+.paginator_align_right .paginator__item {
+  text-align: right;
+}
 /* button */
 .button {
   text-transform: uppercase;
@@ -422,6 +425,61 @@ body::before {
 }
 .social__social-item:active {
   opacity: 0.6;
+}
+/* separator */
+.separator {
+  padding: 140px 0 90px 0;
+  width: 100%;
+}
+.separator::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  height: 38px;
+  width: 2px;
+  background-color: #cb98a8;
+}
+/* section-header */
+.section-header {
+  color: #212021;
+  font-family: "Source Serif Roman - Semibold", "Source Serif Roman", "Times New Roman", serif;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+/* article */
+.article {
+  display: block;
+  color: #1d1c1c;
+  font-family: "Source Serif Roman", "Times New Roman", serif;
+  text-decoration: none;
+}
+.article_size_x {
+  width: 414px;
+}
+.article_size_m {
+  width: 315px;
+}
+.article_size_s {
+  width: 317px;
+}
+.article__tags {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 12px 0 0;
+}
+.article__header {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0 90px;
+  line-height: 1.2em;
+}
+/* icon */
+.icon_type_pdf {
+  width: 24px;
+  height: 28px;
+  background: transparent url('../images/pdf.png') no-repeat 0 0;
 }
 /* header */
 .header {
@@ -716,5 +774,155 @@ body::before {
   .header__social {
     display: none;
   }
+}
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.portfolio::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 130%;
+  right: 37.17%;
+  bottom: 0;
+  z-index: -1;
+  background-color: #f8f8f8;
+}
+.portfolio::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -57px;
+  left: 0;
+  z-index: -1;
+  background: url("../images/one-l-leaf.png") no-repeat 10% 73px, url("../images/one-s-leaf.png") no-repeat 63.3% 0, url("../images/two-s-leaf.png") no-repeat 90% 177px, url("../images/two-m-leaf.png") no-repeat 89% 84.7%;
+}
+.portfolio__section-header {
+  margin: 4px 0 45px;
+}
+.portfolio__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-top: 50px;
+}
+.portfolio__top::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 37.17%;
+  top: 0;
+  z-index: -1;
+  background-color: #f8f8f8;
+}
+.portfolio__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 101px;
+  position: relative;
+}
+.portfolio__bottom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 67%;
+  height: 80%;
+  top: -38px;
+  left: 0;
+  z-index: -1;
+  background-color: #f8f8f8;
+}
+.portfolio__bottom::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 49%;
+  box-sizing: border-box;
+  border: 7px solid #709c54;
+  left: 420px;
+  top: 0;
+  z-index: -1;
+}
+.portfolio__left-articles {
+  padding-top: 4px;
+}
+.portfolio__right-articles {
+  padding-bottom: 82px;
+}
+.portfolio__paginator {
+  padding: 0 17px 111px 41px;
+  margin: 0;
+}
+@media only screen and (max-width: 1439px) {
+  .portfolio__paginator {
+    display: none;
+  }
+}
+.portfolio__social {
+  transform: rotate(90deg);
+  transform-origin: top left;
+  margin: -258px -146px 0 83px;
+  padding: 0;
+  width: 200px;
+}
+@media only screen and (max-width: 1439px) {
+  .portfolio__social {
+    display: none;
+  }
+}
+.portfolio__image {
+  display: block;
+  float: left;
+  width: 610px;
+  height: 373px;
+  background: #709c54 url('../images/desktop/portfolio.png') no-repeat 0 0;
+}
+.portfolio__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 44%;
+  float: left;
+  color: #212021;
+  padding: 101px 0 197px;
+}
+.portfolio__details-header {
+  font-family: "Source Serif Roman - Semibold", "Source Serif Roman", "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.portfolio__details-desc {
+  font-family: "Source Serif Roman", "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: normal;
+  width: 50%;
+  line-height: 1.2em;
+  margin: 15px 0;
+}
+.portfolio__button {
+  margin-top: 22px;
+  letter-spacing: 0.08em;
+}
+.portfolio__button-icon {
+  margin-top: 2px;
+  margin-left: 60px;
+  position: absolute;
 }
 /*# sourceMappingURL=styles.css.map */
