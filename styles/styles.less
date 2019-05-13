@@ -936,7 +936,8 @@ body {
       padding-top: 16px;
     }
     @media only screen and (max-width : @maxWidthMobile) {
-      flex-wrap: wrap;
+      flex-direction: column;
+      //flex-wrap: wrap;
       justify-content: center;
       padding-top: 0;
     }
@@ -1076,7 +1077,8 @@ body {
       background: transparent url('../images/mobile/portfolio.png') no-repeat 0 0;
       position: absolute;
       top: -13px;
-      left: 0;
+      left: 50%;
+      margin-left: -160px;
       z-index: -1;
     }
   } // portfolio__image
@@ -1096,7 +1098,7 @@ body {
     }
     @media only screen and (max-width : @maxWidthMobile) {
       color: white;
-      width: 71.5%;
+      width: 230px;
       margin: 0 auto;
       padding-top: 103px;
     }

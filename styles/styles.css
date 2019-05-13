@@ -951,7 +951,7 @@ body::before {
 }
 @media only screen and (max-width: 763px) {
   .portfolio__top {
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     padding-top: 0;
   }
@@ -1112,7 +1112,8 @@ body::before {
     background: transparent url('../images/mobile/portfolio.png') no-repeat 0 0;
     position: absolute;
     top: -13px;
-    left: 0;
+    left: 50%;
+    margin-left: -160px;
     z-index: -1;
   }
 }
@@ -1135,7 +1136,7 @@ body::before {
 @media only screen and (max-width: 763px) {
   .portfolio__details {
     color: white;
-    width: 71.5%;
+    width: 230px;
     margin: 0 auto;
     padding-top: 103px;
   }
