@@ -63,6 +63,9 @@ body {
       width: 83.5%;
       left: 8.1%;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      display: none;
+    }
   }
 }
 
@@ -143,7 +146,6 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
-
     @media only screen and (max-width : @maxWidthTablet) {
       display: flex;
       flex-direction: column;
@@ -460,7 +462,7 @@ body {
 /* separator */
 
 .separator {
-  padding: 80px 0 54px 0;
+  padding: 16px 0 24px 0;
   width: 100%;
   &::before {
     content: "";
@@ -469,6 +471,9 @@ body {
     height: 38px;
     width: 2px;
     background-color: #cb98a8;
+    @media only screen and (max-width : @maxWidthMobile) {
+      height: 30px;
+    }
   }
 } // separator
 
@@ -483,6 +488,11 @@ body {
   font-weight: normal;
   @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
     font-size: 24px;
+  }
+
+  @media only screen and (max-width : @maxWidthMobile) {
+    font-size: 18px;
+    //letter-spacing: 2.75px;
   }
 } // section-header
 
@@ -499,12 +509,18 @@ body {
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       width: 240px;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 290px;
+    }
   } // article_size_x
 
   &_size_m {
     width: 315px;
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       width: 184px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 290px;
     }
   } // article_size_m
 
@@ -514,10 +530,16 @@ body {
       width: 184px;
 
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 290px;
+    }
   } // article_size_s
 
   &__photo {
     width: 100%;
+    @media only screen and (max-width : @maxWidthMobile) {
+      height: 374px;
+    }
   }
 
   &__tags {
@@ -527,6 +549,10 @@ body {
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       font-size: 11px;
       margin-top: 10px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      font-size: 12px;
+      margin-top: 11px;
     }
   }
 
@@ -539,6 +565,9 @@ body {
       font-size: 15px;
       line-height: 1.3em;
       margin: 2px 0 32px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      margin: 3px 0 68px;
     }
   }
 } // article
@@ -561,7 +590,7 @@ body {
   justify-content: space-between;
   background-color: #f8f8f8;
   //**********
-  margin: 0 auto 60px;
+  margin: 0 auto 124px;
   min-width: @minWidthMobile;
   max-width: @maxWidthDesktop;
 
@@ -574,13 +603,14 @@ body {
     background: #f8f8f8 url("../images/tablet/header.png") no-repeat top right;
     //**********
     height: 822px;
-    margin-bottom: 75px;
+    margin-bottom: 139px;
   }
   @media only screen and (max-width : @maxWidthMobile) {
     background: #f8f8f8 url("../images/mobile/header.png") no-repeat center center;
     background-size: cover;
     //**********
     height: 480px;
+    margin-bottom: 64px;
   }
 
   &__top {
@@ -834,8 +864,12 @@ body {
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  padding-bottom: 113px;
   @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
-    padding-bottom: 132px;
+    padding-bottom: 196px;
+  }
+  @media only screen and (max-width : @maxWidthMobile) {
+    padding-bottom: 0;
   }
 
   &::before {
@@ -848,6 +882,9 @@ body {
     bottom: 0;
     z-index: -1;
     background-color: #f8f8f8;
+    @media only screen and (max-width : @maxWidthMobile) {
+      display: none;
+    }
   } // portfolio::before
 
   &::after {
@@ -856,28 +893,35 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: -21px;
+    top: 9px;
     left: 0;
     z-index: -1;
     background: url("../images/one-l-leaf.png") no-repeat 10% 73px,
       url("../images/one-s-leaf.png") no-repeat 63.3% 0,
       url("../images/two-s-leaf.png") no-repeat 90% 177px,
-      url("../images/two-m-leaf.png") no-repeat 89% 84.7%;
+      url("../images/two-m-leaf.png") no-repeat 89% 77.2%;
 
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
-      top: -54px;
+      top: -24px;
       height: 104%;
       background: url("../images/one-l-leaf.png") no-repeat 4.6% 59px ~"/" 56px 33px,
         url("../images/one-s-leaf.png") no-repeat 63.6% 0 ~"/" 28px 18px,
         url("../images/two-s-leaf.png") no-repeat 94.5% 162px ~"/" 45px 21px,
-        url("../images/two-m-leaf.png") no-repeat 95% 99.3% ~"/" 40px 35px;
+        url("../images/two-m-leaf.png") no-repeat 95% 93.1% ~"/" 40px 35px;
+    }
+
+    @media only screen and (max-width : @maxWidthMobile) {
+      display: none;
     }
   } // portfolio::after -- leafs!!!
 
   &__section-header {
-    margin: 40px 0 45px;
+    margin: 70px 0 45px;
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
-      margin-top: 8px;
+      margin-top: 38px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      margin-top: 0;
     }
   } // portfolio__section-header
 
@@ -890,6 +934,11 @@ body {
     padding-top: 50px;
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       padding-top: 16px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 0;
     }
 
     &::before {
@@ -907,6 +956,9 @@ body {
         left: 30%;
         top: -18%;
       }
+      @media only screen and (max-width : @maxWidthMobile) {
+        display: none;
+      }
     } // portfolio__top::before
 
   } // portfolio__top
@@ -920,6 +972,9 @@ body {
     position: relative;
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       margin-top: 164px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      margin-top: 0;
     }
 
     &::before {
@@ -936,6 +991,9 @@ body {
         width: 79%;
         height: 87%;
         top: -29px;
+      }
+      @media only screen and (max-width : @maxWidthMobile) {
+        display: none;
       }
     } // portfolio__bottom::before
 
@@ -954,6 +1012,9 @@ body {
         width: 76%;
         left: 120px;
       }
+      @media only screen and (max-width : @maxWidthMobile) {
+        display: none;
+      }
     } // portfolio__bottom::after
 
   } // portfolio__bottom
@@ -963,6 +1024,9 @@ body {
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       padding-left: 62px;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      padding-top: 0;
+    }
   } // portfolio__left-articles
 
   &__right-articles {
@@ -970,6 +1034,9 @@ body {
     @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
       padding-bottom: 52px;
       padding-right: 60px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      padding-bottom: 0;
     }
   } // portfolio__right-articles
 
@@ -1003,6 +1070,15 @@ body {
       height: 274px;
       background: #709c54 url('../images/tablet/portfolio.png') no-repeat 0 0;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 320px;
+      height: 388px;
+      background: transparent url('../images/mobile/portfolio.png') no-repeat 0 0;
+      position: absolute;
+      top: -13px;
+      left: 0;
+      z-index: -1;
+    }
   } // portfolio__image
 
   &__details {
@@ -1018,6 +1094,12 @@ body {
       width: 63%;
       padding: 67px 0 124px;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      color: white;
+      width: 71.5%;
+      margin: 0 auto;
+      padding-top: 103px;
+    }
 
     &-header {
       font-family: "Source Serif Roman - Semibold", "Source Serif Roman", "Times New Roman", serif;
@@ -1025,6 +1107,10 @@ body {
       font-weight: normal;
       letter-spacing: 0.01em;
       margin: 0;
+      @media only screen and (max-width : @maxWidthMobile) {
+        font-size: 18px;
+        letter-spacing: 0;
+      }
     } // portfolio__details-header
 
     &-desc {
@@ -1038,6 +1124,11 @@ body {
         font-size: 16px;
         line-height: 1.12em;
       }
+      @media only screen and (max-width : @maxWidthMobile) {
+        font-size: 14px;
+        width: 100%;
+        margin-top: 16px;
+      }
     } // portfolio__details-desc
   } // portfolio__details
 
@@ -1048,11 +1139,33 @@ body {
       margin-left: -6px;
       margin-top: 13px;
     }
+    @media only screen and (max-width : @maxWidthMobile) {
+      color: white;
+      margin-top: 14px;
+      margin-left: -2%;
+    }
+
+    &::after {
+      @media only screen and (max-width : @maxWidthMobile) {
+        background-color: white;
+        margin-left: 6px;
+      }
+    }
+
+    &::before {
+      @media only screen and (max-width : @maxWidthMobile) {
+        background-color: white;
+      }
+    }
 
     &-icon {
       margin-top: 2px;
       margin-left: 60px;
       position: absolute;
+      @media only screen and (max-width : @maxWidthMobile) {
+        margin-top: 0;
+        margin-left: 42px;
+      }
     } // portfolio__button-icon
   } // portfolio__button
 } // portfolio
