@@ -645,11 +645,56 @@ body {
 /* icon */
 
 .icon {
+  display: inline-block;
+
   &_type_pdf {
     width: 24px;
     height: 28px;
     background: transparent url('../images/pdf.png') no-repeat 0 0;
   } // icon_type_pdf
+  &_type_fb {
+    width: 34px;
+    height: 34px;
+    background: transparent url('../images/socials.png') no-repeat 0 0;
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 26px;
+      height: 26px;
+      background-size: auto 100%;
+    }
+  } // icon_type_fb
+  &_type_ig {
+    width: 34px;
+    height: 34px;
+    background: transparent url('../images/socials.png') no-repeat -54px 0;
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 26px;
+      height: 26px;
+      background-size: auto 100%;
+      background-position-x: -41px;
+    }
+  } // icon_type_ig
+  &_type_vk {
+    width: 34px;
+    height: 34px;
+    background: transparent url('../images/socials.png') no-repeat -108px 0;
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 26px;
+      height: 26px;
+      background-size: auto 100%;
+      background-position-x: -83px;
+    }
+  } // icon_type_vk
+  &_type_pn {
+    width: 34px;
+    height: 34px;
+    background: transparent url('../images/socials.png') no-repeat -162px 0;
+    @media only screen and (max-width : @maxWidthMobile) {
+      width: 26px;
+      height: 26px;
+      background-size: auto 100%;
+      background-position-x: -124px;
+    }
+  } // icon_type_pn
 } // icon
 
 /* header */
@@ -1458,7 +1503,7 @@ body {
   &__desc {
     @media only screen and (min-width: @minWidthTablet) and (max-width: @maxWidthTablet) {
       flex-basis: 50%;
-      padding: 0 14px;
+      padding: 0 15px;
       margin-top: -22px;
     }
 
@@ -1531,6 +1576,7 @@ body {
 } // about
 
 /* price */
+
 .price {
   display: flex;
   flex-direction: column;
@@ -1564,7 +1610,7 @@ body {
     @media only screen and (max-width : @maxWidthMobile) {
       display: none;
     }
-  } // price::before -- right line
+  } // price::before -- lines
 
   &::after {
     content: "";
@@ -1733,3 +1779,184 @@ body {
     padding: 0;
   } // price__social
 } // price
+
+/* contacts */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-bottom: 189px;
+  @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+    padding-bottom: 67px;
+  }
+  @media only screen and (max-width : @maxWidthMobile) {
+    padding-bottom: 82px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25.35%;
+    height: 120%;
+    right: 37.17%;
+    bottom: 0;
+    z-index: -1;
+    border-left: #f8f8f8 solid 2px;
+    border-right: #f8f8f8 solid 2px;
+    @media only screen and (min-width: @minWidthTablet) and (max-width: @maxWidthTablet) {
+      right: 39.17%;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      display: none;
+    }
+  } // price::before -- lines
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url("../images/one-sm-leaf.png") no-repeat 10.1% 77px;
+
+    @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+      background: url("../images/one-sm-leaf.png") no-repeat 6.5% 106px ~"/" 31px 19px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      display: none;
+    }
+  } // price::after -- leafs!!!
+
+  &__section-header {
+    margin-top: 70px;
+
+    @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+      margin-top: 39px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      margin-top: 0px;
+      padding-left: 16px;
+    }
+  } // contacts__section-header
+
+  &__contacts {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Source Serif Roman - Semibold", "Source Serif Roman", "Times New Roman", serif;
+    color: #4e4d4e;
+    font-size: 18px;
+    letter-spacing: 0.11em;
+    padding-left: 0;
+    margin-top: 68px;
+    margin-left: -4px;
+
+    @media only screen and (max-width : @maxWidthTablet) {
+      flex-direction: column;
+      font-size: 16px;
+      align-items: center;
+      margin: 32px 0 0;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      font-size: 14px;
+      margin: 0;
+      letter-spacing: 0.1em;
+    }
+
+    & > li {
+      display: inline-block;
+      padding-right: 80px;
+      @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+        padding: 20px 0 0;
+      }
+      @media only screen and (max-width : @maxWidthMobile) {
+        padding: 14px 0 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        padding-left: 5px;
+        @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+          padding-left: 0;
+        }
+        @media only screen and (max-width : @maxWidthMobile) {
+          padding: 11px 0 0;
+        }
+        & a {
+          letter-spacing: 0;
+          padding-left: 1px;
+        }
+      }
+
+      & span::after {
+        content: " /// ";
+        display: inline;
+        color: #8eb574;
+        font-size: 18px;
+        letter-spacing: 0.11em;
+        @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+          padding: 0 13px;
+        }
+        @media only screen and (max-width : @maxWidthMobile) {
+          padding: 0 3px;
+        }
+      }
+
+      & a {
+        color: #4e4d4e;
+        text-decoration: none;
+
+        &:hover {
+          color: #709c54;
+          text-decoration: underline;
+        }
+
+        &:active {
+          opacity: 0.6;
+        }
+      }
+
+    }
+  } // contacts__contacts
+
+  &__socials {
+    padding: 0;
+    margin: 49px 0 0;
+    @media only screen and (min-width : @minWidthTablet) and (max-width : @maxWidthTablet) {
+      margin-top: 52px;
+    }
+    @media only screen and (max-width : @maxWidthMobile) {
+      margin-top: 35px;
+    }
+
+    & > li {
+      opacity: 1;
+
+      &:not(:last-child) {
+        padding-right: 16px;
+        @media only screen and (max-width : @maxWidthMobile) {
+          padding-right: 23px;
+        }
+
+        &::after {
+          display: none;
+        } // contacts__socials > li:not(:last-child)::after
+      } // contacts__socials > li:not(:last-child)
+
+      & a:hover {
+        background-image: url("../images/socials-h.png");
+      }
+
+      & a:active {
+        opacity: 0.6;
+      }
+    } // contacts__socials > li
+  } // contacts__socials
+} // contacts
